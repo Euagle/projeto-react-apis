@@ -8,6 +8,8 @@ export const Container = styled.header`
     flex-direction: row-reverse;
     justify-content: flex-start;
     margin-rigth: 200px;
+    width: 1200px;
+
      button {
     /* position: absolute; */
    display: flex;
