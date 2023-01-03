@@ -1,9 +1,8 @@
-import Card from "../../Card/Card";
+import Card from "../../components/Card/Card";
 import { Container } from "./HomePage.styled";
-import Header from "../../header/Header";
+import Header from "../../components/Header/Header";
 import {useContext } from "react"
-import {GlobalContext} from "../../contexts/GlobalContext"
-// import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import {GlobalContext} from "../../components/contexts/GlobalContext.js"
 function HomePage(props) {
   // const { pokelist, addToPokedex, pokedex } = props;
 const context = useContext(GlobalContext)
@@ -22,8 +21,6 @@ const { pokelist, addToPokedex, pokedex}= context
     <Container>
       <Header />
       <section>
-                  <h1> Todos os pokemons</h1>
-
         {filteredPokelist().map((pokemon) => (
           <Card
             key={pokemon.url}

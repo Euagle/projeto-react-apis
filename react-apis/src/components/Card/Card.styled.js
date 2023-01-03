@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import imagem from "../icons/pngwing.png"
 
 // export const Container = styled.div`
 // width: 440px;
@@ -34,7 +35,7 @@ export const ImgStyle = styled.div`
   display: flex;
 
 .container{
-  width: 300px;
+  width: 332px;
   height: 200px;
   left: 0px;
   top: 30px;
@@ -47,6 +48,17 @@ export const ImgStyle = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background-image: url(${imagem});
+  background-repeat: no-repeat;
+  /* background-position: right; */
+  background-position: 105% 90%;
+
+ 
+  border-radius: 12px;
+  padding-left: 1.43rem;
+  
+  /* margin-bottom: 1.25rem; */
+  /* margin-top: 5vh; */
 }
 h1{
   color: white;
@@ -61,14 +73,18 @@ width: 150px;
 /* top: -62px; */
 /* gap: 20px; */
 height:9px;
-margin-left:-54px;
+margin-left:-101px;
 margin-top: 70px;
 display: flex;
   gap: 0.62rem;
 img{
-  width: 157px;
+  width: 139px;
     height: 119px;
-    margin-right: -80px;
+    margin-right: -95px;
+    margin-left: 4px;
+    margin-top: -156px;
+
+
 }
 /* background: url(pngwing.png);
 opacity: 0.17;
@@ -77,7 +93,9 @@ transform: rotate(30deg); */
   display:flex;
   justify-content: space-between;
   /* padding-top: 35px; */
-  margin-left: 30px;
+  margin-left: -6px;
+  margin-top: -34px;
+
   flex-direction: row-reverse;
 
 
@@ -141,18 +159,13 @@ border-color: white;
   
 /* } */
   img {
-    align-self: end;
-    /* position:absolute; */
-    
-    /* width: 210.73px; */
-/* height: 210.73px; */
-/* position: absolute; */
+  
 
-
-width: 150px;
+width: 227px;
     height: 150px;
-    padding-left: 87px;
-    margin-top: -134px;
+    padding-left: 90px;
+    margin-top: -102px;
+    margin-left: 28px;
 
 
 
@@ -173,7 +186,7 @@ transform: rotate(30deg); */
   margin: 20px;
     flex-direction: column;
   p{
-    margin-left: 15px;
+    margin-left: -24px;
     margin-top: 2px;
 
 
@@ -184,7 +197,7 @@ h2{
   color: white;
   font-size: 20px;
   line-height: 10px;
-    margin-left: 15px;
+    margin-left: -26px;
     margin-top: -6px;
 
     font-family: 'Inter';

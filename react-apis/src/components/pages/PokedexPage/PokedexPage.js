@@ -4,9 +4,10 @@ import Header from "../../header/Header";
 import { BASE_URL } from "../../constants/url";
 import {useContext } from "react"
 import {GlobalContext} from "../../contexts/GlobalContext"
+// import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 
-function PokedexPage(props) {
+function PokedexPage() {
   // const { pokedex, removeFromPokedex } = props;
   const context = useContext(GlobalContext)
   const {  removeFromPokedex, pokedex}= context
@@ -17,7 +18,7 @@ function PokedexPage(props) {
     <Container>
       <Header />
       <section>
-      <h1>Meus pokemóns</h1>
+       <h1> Meus pokemóns</h1>
 
 <div className="cards">
 

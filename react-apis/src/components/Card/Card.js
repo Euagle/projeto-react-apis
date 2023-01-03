@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { goToDetailsPage } from "../routes/coordinator";
 import { ImgStyle } from "./Card.styled";
 import { Type } from "../types/Type";
+// import { TypeColor } from "../types/TypeColor";
 
 function Card(props) {
 
@@ -34,7 +35,8 @@ function Card(props) {
 
   return (
     <ImgStyle>
-    <div className="container">
+    <div className="container"  >
+   
     <div className="info">
      <p>#0{pokemon.id} </p>
         <h2>{pokemon.name} </h2>

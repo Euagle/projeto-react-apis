@@ -38,6 +38,7 @@ height: 113px;
   }};
   .pokedex{
 display:flex;
+width:1200px;
 
 h3{
   width: 243px;
@@ -70,6 +71,7 @@ height: 113px;
 }}
 .details{
   display:flex;
+  width:1200px;
 
   h3{
       width: 243px;

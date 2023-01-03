@@ -8,6 +8,7 @@ flex-wrap: wrap;
 gap: 40px;
 background: #5E5E5E;
 padding:50px;
+width: 1200px;
 h1{
     /* position: absolute; */
 width: 100%;
