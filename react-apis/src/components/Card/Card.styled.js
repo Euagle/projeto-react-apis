@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import imagem from "../icons/pngwing.png"
+import { TypeColor } from "../types/TypeColor";
 
 // export const Container = styled.div`
 // width: 440px;
@@ -42,7 +43,7 @@ export const ImgStyle = styled.div`
   gap: 20px;
   color:white;
   font-size: 15px;
-
+  /* background: (${TypeColor}); */
   background: #71c3ff;
   border-radius: 12px;
   flex-direction: row;

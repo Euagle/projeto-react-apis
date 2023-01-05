@@ -1,67 +1,86 @@
-// import Header from "../..//header/Header";
-// import {useContext } from "react"
-// import {GlobalContext} from "../../contexts/GlobalContext"
-// function DetailsPage(props) {
-//   const context = useContext(GlobalContext)
-  
-  
-//   const { }= context
-//   return (
-//     <div>
-//       <Header />
-      
-//       <h1>Ainda não tem nada!</h1>
-//     </div>
-//   );
-// }
-
-// export default DetailsPage;
-
-// //Fazer tudo pegando por context do app, fazer useEffect,fazeer uma para receber a url, fazer um map no return e estilizar
-
-
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState , useContext } from "react";
 import Header from "../../header/Header";
-import { BASE_URL } from "../../constants/url";
+import { useParams } from "react-router-dom";
+import {
+  BaseStats,
+  Container, Div, Info, Primeiro, Details
+  
+} from "./Styled";
+import { GlobalContext } from "../../contexts/GlobalContext";
+import { Type } from "../../types/Type";
 
 const DetailsPage = () => {
-  const [pokemon, setPokemon] = useState();
 
-  useEffect(() => { 
-    axios.get({BASE_URL})
-        .then((response)=>{
-      setPokemon(response.data);
-      console.log(response.data)
 
-    })
-   .catch ((error)=> {
-    console.log(error);
-  });
+  const { name } = useParams();
+  const [detailedPokemonData, setDetailedPokemonData] = useState({});
+  const context = useContext(GlobalContext);
+  const { pokelist } = context;
 
-   }, []);
-   
+  
+  let pokemonToBeDetailed = pokelist.find(pokemon => pokemon["name"] === name);
 
-console.log("oi", pokemon.stats)
-console.log(setPokemon)
+
+  const fetchDetailedPokemon = async () => {
+    try {
+      const response = await axios.get(pokemonToBeDetailed.url);
+      setDetailedPokemonData(response.data);
+    } catch (error){
+      console.log(error);
+    }
+  }
+
+  if (pokemonToBeDetailed){
+    fetchDetailedPokemon();
+  }
+
   return (
     <div>
-      <Header />
-        <div>
-          <p>{pokemon.name}</p>
-          <img src={pokemon.sprites?.other.dream_world.front_default} />
-          <img src={pokemon.sprites?.front_default} />
-          <img src={pokemon.sprites?.back_default} />
-          <div>
-            <h1>Base stats</h1>
-            {pokemon.stats?.map((stats) => {
+    <Header />
+<Primeiro>
+      <h1>Detalhes</h1>
+
+    <Container>
+
+   <div className="infos">
+
+        <Info >
+          
+          <img src={detailedPokemonData?.sprites?.front_default} />
+          <img src={detailedPokemonData?.sprites?.back_default} />
+          </Info>
+          <BaseStats className="baseStats">
+            <h2>Base stats</h2>
+            {detailedPokemonData?.stats?.map((stats) => {
               return <p>{stats.stat.name}</p>;
             })}
-            {pokemon.stats?.map((stats) => {
+            {detailedPokemonData?.stats?.map((stats) => {
               return <p>{stats.base_stat}</p>
             })}
+          </BaseStats>
+          {/* <div>  <h2>Moves: </h2>
+                <h3>Razor Wind</h3>
+                <h3>Razor Wind</h3>
+                <h3>Razor Wind</h3>
+                <h3>Razor Wind</h3></div> */} </div>
+        <Div >          <img className="imagem" src={detailedPokemonData?.sprites?.other.dream_world.front_default} />
+        <Details>
+        <h2>#{detailedPokemonData?.id}</h2>
+          <h4 >{detailedPokemonData?.name}</h4>
+          <div className="types">
+          <p>{detailedPokemonData?.types?.map((type)=>{
+            return <img className="type" src={Type(type.type.name)}/>;
+          })}</p>
           </div>
-        </div>
+        
+        </Details>
+      
+
+</Div>  
+
+    </Container>
+    </Primeiro>
     </div>
   );
 };
