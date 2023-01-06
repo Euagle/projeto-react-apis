@@ -1,15 +1,12 @@
 import Card from "../../Card/Card";
 import { Container } from "./HomePage.styled";
 import Header from "../../header/Header";
-import {useContext } from "react"
-import {GlobalContext} from "../../contexts/GlobalContext"
-// import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { useContext } from "react";
+import { GlobalContext } from "../../contexts/GlobalContext";
 function HomePage(props) {
-  // const { pokelist, addToPokedex, pokedex } = props;
-const context = useContext(GlobalContext)
+  const context = useContext(GlobalContext);
 
-const { pokelist, addToPokedex, pokedex}= context
-  // não mostrar pokemons que estão na pokedex
+  const { pokelist, addToPokedex, pokedex } = context;
   const filteredPokelist = () =>
     pokelist.filter(
       (pokemonInList) =>
@@ -22,7 +19,7 @@ const { pokelist, addToPokedex, pokedex}= context
     <Container>
       <Header />
       <section>
-                  <h1> Todos os pokemons</h1>
+        <h1> Todos os pokemons</h1>
 
         {filteredPokelist().map((pokemon) => (
           <Card
