@@ -30,13 +30,9 @@ import { TypeColor } from "../types/TypeColor";
 //     }
 //   }
 // `;
-
-
-export const ImgStyle = styled.div`
-  display: flex;
-
-.container{
-  width: 332px;
+ export const ContainerCard = styled.div`
+ 
+ width: 332px;
   height: 200px;
   left: 0px;
   top: 30px;
@@ -44,7 +40,8 @@ export const ImgStyle = styled.div`
   color:white;
   font-size: 15px;
   /* background: (${TypeColor}); */
-  background: #71c3ff;
+  background: ${(props) => props.color};
+  /* background: #71c3ff; */
   border-radius: 12px;
   flex-direction: row;
   justify-content: center;
@@ -58,9 +55,15 @@ export const ImgStyle = styled.div`
   border-radius: 12px;
   padding-left: 1.43rem;
   
-  /* margin-bottom: 1.25rem; */
-  /* margin-top: 5vh; */
-}
+ `
+
+export const ImgStyle = styled.div`
+  display: flex;
+
+/* .container{
+ 
+
+} */
 h1{
   color: white;
   font-size: 20px;
