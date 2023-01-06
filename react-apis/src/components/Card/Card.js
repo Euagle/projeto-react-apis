@@ -2,9 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { goToDetailsPage } from "../routes/coordinator";
-import { ImgStyle } from "./Card.styled";
+import { ImgStyle, ContainerCard } from "./Card.styled";
 import { Type } from "../types/Type";
-// import { TypeColor } from "../types/TypeColor";
+import { TypeColor } from "../types/TypeColor";
+import { Container } from "@mui/system";
 
 function Card(props) {
 
@@ -33,9 +34,14 @@ function Card(props) {
     }
   };
 
+  const getTypePokemon = ()=>{
+    for (let i in pokemon.types){
+      return pokemon.types[i].type.name
+    }
+  }
   return (
     <ImgStyle>
-    <div className="container"  >
+    <ContainerCard color={TypeColor(getTypePokemon())} className="container"  >
    
     <div className="info">
      <p>#0{pokemon.id} </p>
@@ -68,7 +74,7 @@ Capturar!          </button>
           detalhes
         </p>
       </div>
-            </div>
+            </ContainerCard>
 
     </ImgStyle>
   );

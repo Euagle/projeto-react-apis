@@ -18,9 +18,12 @@ height: 663px;
 left: 0px;
 top: 0px;
 
-background: #729F92;
+background: ${(props) => props.color};
 border-radius: 37.8857px;  h3{
     padding-top: 10px;
+      background-image: url(${imagem});
+      background-position: 105% 90%;
+
   }
   .infos{
     margin-top: -207px;

@@ -7,6 +7,7 @@ import {
   Container, Div, Info, Primeiro, Details
   
 } from "./Styled";
+import { TypeColor } from "../../types/TypeColor";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { Type } from "../../types/Type";
 
@@ -34,14 +35,18 @@ const DetailsPage = () => {
   if (pokemonToBeDetailed){
     fetchDetailedPokemon();
   }
+  const getTypePokemon = ()=>{
+    for (let i in detailedPokemonData.types){
+      return detailedPokemonData.types[i].type.name
+    }}
 
   return (
     <div>
     <Header />
-<Primeiro>
+<Primeiro >
       <h1>Detalhes</h1>
 
-    <Container>
+    <Container color={TypeColor(getTypePokemon())}>
 
    <div className="infos">
 
